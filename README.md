@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.static(__dirname));
 
 app.get('/api/getVideo', async (req, res) => {
-const videoUrl = req.query.url;
+    const videoUrl = req.query.url;
 
 if (!videoUrl) {
     return res.status(400).json({ error: 'กรุณาใส่ URL' });
@@ -28,10 +28,10 @@ try {
     console.error('Error fetching video:', error);
     res.status(500).json({ error: 'ไม่สามารถดึงข้อมูลวิดีโอได้' });
 }
-
 });
-
-app.listen(port, () => { console.log(Server is running on http://localhost:${port}); });
+app.listen(port, () => { 
+    console.log(Server is running on http://localhost:${port}); 
+});
 
 <!DOCTYPE html>
 <html lang="th"><head>
